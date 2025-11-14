@@ -64,7 +64,13 @@
 ## 6. DDPM vs DDIM 개념 정리 (발표자 설명 기반)
 
 ### DDPM (Denoising Diffusion Probabilistic Model)
-- 확률적(stochastic) 복원 과정을 사용하는 **기본 diffusion 모델*
+- 확률적(stochastic) 복원 과정을 사용하는 **기본 diffusion 모델**
+- **동작 원리**
+  - **Forward Process**
+    - 일정 시간 동안 이미지에 가우시안 노이즈를 순차적으로 추가
+    - 결과적으로 완전한 노이즈 분포에 도달
+  - **Reverse Process**
+    - 학습된 신경망이 노이즈를 점차 제거하며 원본 이미지로 복원
 - 복원 과정에서 수십~수백 단계에 걸쳐 노이즈를 점진적으로 제거
   - 노이즈를 천천히 제거하며 복원 → **복원 과정이 오래 걸림**
   - 성능은 좋지만 속도가 느림 (RTF ↑)
